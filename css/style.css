@@ -24,6 +24,13 @@ html {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 768px) {
+    .header-bg {
+        background-attachment: scroll;
+    }
 }
 
 /* Project Cards Hover Effect */
