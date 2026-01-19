@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-light">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">DEV.PORTFOLIO</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Details Section -->
+    <section class="py-5 mt-5">
+        <div class="container py-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a href="index.html#portfolio">Portfolio</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Project Details</li>
+                        </ol>
+                    </nav>
+                    
+                    <div id="project-content" class="bg-white p-4 p-md-5 rounded shadow-sm">
+                        <!-- Content will be loaded here dynamically -->
+                        <div class="text-center">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 text-center">
+        <div class="container">
+            <p class="mb-0">&copy; 2024 Your Name. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const projectId = params.get('id');
+            
+            // Project Data - You can edit the GitHub links and details here
+            const projects = {
+                '1': {
+                    title: 'E-Commerce Platform',
+                    image: 'image/html 6.jpg',
+                    description: 'A full-featured shopping cart application built with Node.js and MongoDB. It features user authentication, product search, shopping cart functionality, and payment gateway integration.',
+                    tech: ['JavaScript', 'HTML5', 'Bootstrap 5', 'PHP', 'MySQL'],
+                    github: 'https://github.com/ben-cyber-ul/Delish/'
+                },
+                '2': {
+                    title: 'Task Manager App',
+                    image: 'image/html 1.jpg',
+                    description: 'A productivity tool to manage daily tasks efficiently using React. Users can create, edit, delete, and categorize tasks. Includes local storage support for data persistence.',
+                    tech: ['Bootstrap', 'HTML5', 'JavaScript', 'PHP', 'MySQL'],
+                    github: 'https://github.com/ben-cyber-ul/EbySam-construction/'
+                },
+                '3': {
+                    title: 'Portfolio Website',
+                    image: 'image/html 2.jpg',
+                    description: 'A responsive portfolio website template using Bootstrap 5. Designed to showcase projects and skills with a clean, modern UI.',
+                    tech: ['HTML5', 'CSS3', 'Bootstrap 5', 'JavaScript'],
+                    github: 'https://github.com/ben-cyber-ul/Ben-TechHub/'
+                }
+            };
+
+            const project = projects[projectId];
+            const contentDiv = document.getElementById('project-content');
+
+            if (project) {
+                contentDiv.innerHTML = `
+                    <h1 class="fw-bold mb-3">${project.title}</h1>
+                    <img src="${project.image}" alt="${project.title}" class="img-fluid rounded shadow mb-4 w-100">
+                    <h3 class="fw-bold">Overview</h3>
+                    <p class="lead text-muted">${project.description}</p>
+                    <h4 class="fw-bold mt-4">Technologies Used</h4>
+                    <div class="d-flex flex-wrap gap-2 mb-4">
+                        ${project.tech.map(t => `<span class="badge bg-secondary">${t}</span>`).join('')}
+                    </div>
+                    <div class="d-grid gap-2 d-md-block mt-5">
+                        <a href="${project.github}" target="_blank" class="btn btn-dark btn-lg">
+                            <i class="fab fa-github me-2"></i> View on GitHub
+                        </a>
+                        <a href="index.html#contact" class="btn btn-outline-primary btn-lg">Contact Me</a>
+                    </div>
+                `;
+            } else {
+                contentDiv.innerHTML = `
+                    <div class="alert alert-warning">
+                        Project not found. <a href="index.html">Return to Home</a>
+                    </div>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>
