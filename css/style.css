@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import url('../image/html\ 5.jpg');
 
 body {
     font-family: 'Poppins', sans-serif;
@@ -20,7 +20,7 @@ html {
 
 /* Hero Section Background */
 .header-bg {
-    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../image/html\ 6.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
