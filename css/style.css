@@ -1,15 +1,12 @@
-@import url('../image/html\ 5.jpg');
 
 body {
     font-family: 'Poppins', sans-serif;
 }
 
-/* Smooth Scrolling */
 html {
     scroll-behavior: smooth;
 }
 
-/* Navbar adjustments */
 .navbar-brand {
     letter-spacing: 1px;
 }
@@ -18,7 +15,6 @@ html {
     font-weight: 500;
 }
 
-/* Hero Section Background */
 .header-bg {
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../image/html\ 6.jpg');
     background-size: cover;
@@ -33,7 +29,6 @@ html {
     }
 }
 
-/* Project Cards Hover Effect */
 .project-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
